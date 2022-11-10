@@ -349,15 +349,25 @@
     </svg>
 
   </div>
+ <!--The ngfor should make a table row for each item in our items array-->
+<table>
+  <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+  </tr>
+  <tr *ngFor="let item of names">
+      <td>{{item.name}}</td>
+      <td>{{item.category}}</td>
+      <td>{{item.price}}</td>
+  </tr>
+</table>
 
-  <h1>Menu</h1>
-  <div style="border: solid 3px black;" *ngFor="let items">
-    <br/>
-    <p>Name: {{items.name}}</p>
-    <p>Category: {{items.category}}</p>
-    <p>Price: {{items.price}}</p>
-    <br/>
-  </div>
+<p>Search by Category</p>
+<input type="text" id="cat" />
+<button (click)="getByCategory()">Filter by category</button>
+<button (click)="reset()">Reset</button>
+
   
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
